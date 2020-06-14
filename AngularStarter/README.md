@@ -45,7 +45,7 @@ To execute the sample application run:
    ```
 The ng serve command launches the server, watches your files, and rebuilds the app as you make changes to those files. Visit localhost:4200 to see the application.
 
-![Sample Screen](https://github.com/cpanou/web/sources/Sample.JPG)
+![Sample Screen](https://github.com/cpanou/web/blob/master/sources/Sample.JPG)
 
 
 #### **Visual Studio Code**
