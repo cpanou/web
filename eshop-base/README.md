@@ -37,6 +37,6 @@ To add the new packages to our application we need to include their stylesheets.
 Now we can use css classes from bootstrap in our html.
 
 
-[bootstrap-components](https://getbootstrap.com/docs/4.0/components/buttons/)
-[fa - icons](https://fontawesome.bootstrapcheatsheets.com/)
-[bs - icons](https://icons.getbootstrap.com/)
+* [bootstrap-components](https://getbootstrap.com/docs/4.0/components/buttons/)
+* [fa - icons](https://fontawesome.bootstrapcheatsheets.com/)
+* [bs - icons](https://icons.getbootstrap.com/)
