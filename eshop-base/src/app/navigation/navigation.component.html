@@ -10,20 +10,25 @@
     <div class="collapse navbar-collapse" id="navbarNav">
 
         <div class="navbar-nav ml-auto">
+            
             <a class="nav-item nav-link ">
                 <i class="fa fa-shopping-cart"></i>
                 Cart
             </a>
+
             <a class="nav-item nav-link ">
                 <i class="fa fa-list-ul"></i>
                 Orders
             </a>
+
             <a class="nav-item nav-link ">
                 Username
             </a>
-            <a class="nav-item nav-link ">
-                Sign In/Sign Out
+
+            <a (click)="logout()" class="nav-item nav-link ">
+                Sign Out
             </a>
+
         </div>
         
     </div>
