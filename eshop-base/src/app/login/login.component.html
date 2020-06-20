@@ -1,0 +1,12 @@
+
+<div class="form-group">
+    <label for="username">username</label>
+    <input type="email" class="form-control" id="username"  [(ngModel)]="username">
+</div>
+<div class="form-group">
+    <label for="password">password </label>
+    <input type="password" class="form-control" id="password"  [(ngModel)]="password">
+</div>
+<button (click)="login()" class="btn btn-dark">Sumbit</button>
+
+<span *ngIf="loginError">Invalid Credentials</span>

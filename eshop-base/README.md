@@ -1,10 +1,6 @@
 # EshopBase
 
-In this section we will create the base for the eshop application.
-
-We will create the navigation and Login components.
-
-We will also use Angular's router to define navigation between pages.
+In this section we will create the base for the eshop application. To get Started with Angular components and views we will create a Navigation component, that will hold the main naviational links between pages of our app, and a Login component that will handle the user login.
 
 ## Setting up the eshop-base app
 
