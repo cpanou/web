@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+.generic-page {
+    background-color: rgba(122, 118, 118, 0.103);
+}
+.generic-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.generic-logo {
+    max-width: 140px;
+}
+.generic-container {
+    text-align: center;
+    box-shadow: 2px 2px 10px #ccc;
+}
+.generic-container .card {
+    min-width: 400px;
+}
+.generic-container-header {
+    padding: 10px 10px;
+    border-bottom: 1px solid rgba(122, 118, 118, 0.185);
+}
+
+.error-msg {
+    color: rgba(231, 53, 53, 0.774);
+}
+
+.divider {
+    border-bottom: 1px solid rgba(122, 118, 118, 0.185);
+    line-height: 0.1em;
+    margin: 8px 0px 8px;
+}
+.divider span {
+    background: #ffffff;
+    padding: 10px;
+}

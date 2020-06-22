@@ -1,28 +1,8 @@
-.login-page {
-    background-color: rgba(122, 118, 118, 0.103);
-}
-.login-content {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    max-width: 140px;
-}
-
-.login-container {
-    min-width: 400px;
-    text-align: center;
-    box-shadow: 2px 2px 10px #ccc;
-}
-
 
 .login-form {
     text-align: left;
 }
-.error-msg {
-    color: rgba(231, 53, 53, 0.774);
+
+.container-footer {
+    margin-top: 10px;
 }

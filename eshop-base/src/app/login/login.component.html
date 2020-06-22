@@ -1,27 +1,37 @@
-<div class="login-page">
+<div class="generic-page">
+    <div class="generic-content">
+        <img class="generic-logo" src="assets/logo.png" alt="">
+        <div class="generic-container">
 
-    <div class="login-content">
-
-        <img class="logo" src="assets/logo.png" alt="">
-        <div class="login-container card">
-            <div class="card-body">
-                <h5 class="card-title">Welcome</h5>
-                <span class="card-text">Sign In:</span>
-                <form class="form-group login-form">
-                    <div class="form-group">
-                        <label for="username">username</label>
-                        <input type="email" class="form-control" id="username" [(ngModel)]="username">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">password </label>
-                        <input type="password" class="form-control" id="password" [(ngModel)]="password">
-                    </div>
-                    <p class="error-msg" *ngIf="loginError">{{ errorMessage }}</p>
-                    <button (click)="login()" class="btn btn-dark">Submit</button>
-                </form>
+            <div class="card">
+                <div class="generic-container-header">
+                    <h5 class="card-title">Welcome</h5>
+                    <span class="card-text">Connect to e-shop to start consuming!</span>
+                </div>
+                <div class="card-body">
+                    <form class="form-group login-form">
+                        <div class="form-group">
+                            <label for="username">username</label>
+                            <input name="username" type="text" class="form-control" id="username"
+                                [(ngModel)]="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">password </label>
+                            <input name="password" type="password" class="form-control" id="password"
+                                [(ngModel)]="password">
+                        </div>
+                        <p class="error-msg" *ngIf="loginError">{{ errorMessage }}</p>
+                    </form>
+                    <button (click)="login()" class="btn btn-dark">Sign In</button>
+                </div>
+                <div class="divider"><span>or</span></div>
+                <div class="container-footer">
+                    <p>Don't have an account?
+                        <button (click)="register()" class="btn btn-link">Sing Up</button>
+                    </p>
+                </div>
             </div>
+
         </div>
-
     </div>
-
 </div>

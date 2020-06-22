@@ -28,4 +28,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  register(): void {
+    this.router.navigate(['sign-up']);
+  }
+
 }
