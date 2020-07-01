@@ -1,33 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
-.generic-page {
+.centered-page {
     background-color: rgba(122, 118, 118, 0.103);
 }
-.generic-content {
+.centered-content {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.generic-logo {
+.centered-logo {
     max-width: 140px;
 }
-.generic-container {
+.centered-container {
     text-align: center;
     box-shadow: 2px 2px 10px #ccc;
 }
-.generic-container .card {
+.centered-container .card {
     min-width: 400px;
 }
-.generic-container-header {
-    padding: 10px 10px;
+.centered-container-header {
+    padding: 20px 20px;
     border-bottom: 1px solid rgba(122, 118, 118, 0.185);
 }
+.centered-container-footer {
+    /* margin-top: 10px; */
+    padding: 0px 0px 10px;
+    /*     [top] | [right] | [bottom] | [left]   */
+    /*     [top] | [right-left] | [bottom]    */
+    /*     [top-bottom] | [right-left]    */
+    /*     [top-right-bottom-left]    */
+}
+.centered-container-footer p {
+    padding: 10px 20px 0;
+}
+.centered-container-footer button {
+    padding: 0px;
+    vertical-align: unset;
+}
+@media (max-width:768px) {
+
+    .centered-container .card {
+        min-width: 0;
+    }
+
+}
+
 
 .error-msg {
     color: rgba(231, 53, 53, 0.774);
 }
-
 .divider {
     border-bottom: 1px solid rgba(122, 118, 118, 0.185);
     line-height: 0.1em;
