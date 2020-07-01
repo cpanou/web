@@ -20,7 +20,7 @@
                             <input name="password" type="password" class="form-control" id="password"
                                 [(ngModel)]="password">
                         </div>
-                        <p class="error-msg" *ngIf="loginError">{{ errorMessage }}</p>
+                        <p class="error-msg" *ngIf="loginError">{{ errorMessage }} {{ xss }}</p>
                     </form>
                     <button (click)="login()" class="btn btn-dark">Sign In</button>
                 </div>
