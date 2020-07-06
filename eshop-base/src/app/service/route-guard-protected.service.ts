@@ -5,7 +5,7 @@ import { BasicAuthService } from './basic-auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class RouteGuardService implements CanActivate {
+export class RouteGuardProtectedService implements CanActivate {
 
   constructor(private auth: BasicAuthService, private router: Router) { }
 
