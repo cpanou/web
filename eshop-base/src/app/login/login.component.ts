@@ -12,23 +12,25 @@ export class LoginComponent implements OnInit {
   password: string;
   loginError: boolean = false;
   errorMessage: string = "Invalid Credentials";
-  xss: string;
 
-  constructor(private router: Router,
-              private auth: BasicAuthService) { }
+  constructor(
+    private router: Router,
+    private auth: BasicAuthService) { }
 
   ngOnInit(): void {
   }
 
   login(): void {
-    this.xss = this.username;
-    if ( this.auth.login(this.username, this.password) ) {
-      this.loginError = false;
-      this.router.navigate(['home']);
-    } else {
-      this.loginError = true;
-    }
-    
+    this.auth.userLogin(this.username, this.password)
+      .subscribe(
+        result => {
+          this.loginError = false;
+          this.router.navigate(['home']);
+          console.log(result);
+        },
+        error => {
+          this.loginError = true;
+        });
   }
 
   register(): void {

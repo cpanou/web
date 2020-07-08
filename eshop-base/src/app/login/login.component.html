@@ -20,9 +20,9 @@
                             <input name="password" type="password" class="form-control" id="password"
                                 [(ngModel)]="password">
                         </div>
-                        <p class="error-msg" *ngIf="loginError">{{ errorMessage }}</p>
                         <button (click)="login()" class="btn btn-dark">Sign In</button>
                     </form>
+                    <p class="error-msg" *ngIf="loginError">{{ errorMessage }}</p>
                 </div>
                 <div class="centered-container-footer">
                     <div class="divider"><span>or</span></div>
