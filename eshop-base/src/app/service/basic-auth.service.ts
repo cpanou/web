@@ -74,4 +74,7 @@ export class BasicAuthService {
     return token !== null && user !== null;
   }
 
+  getIdToken(){
+    return sessionStorage.getItem(AUTH_TOKEN);
+  }
 }
