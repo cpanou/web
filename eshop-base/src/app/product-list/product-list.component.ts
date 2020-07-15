@@ -8,26 +8,30 @@ import { ProductsService } from '../service/products.service';
 })
 export class ProductListComponent implements OnInit {
 
-  // product = {
-  //   id: "SR-1231",
-  //   name: "Lenovvo X-02",
-  //   price: 2200
-  // };
 
-  productList = [ ];
+  productList = [];
 
   constructor(private productService: ProductsService) { }
 
   ngOnInit(): void {
-    this.productService.getAllProducts();
+    this.productService.getAllProducts()
+      .subscribe(
+        data => { this.productList = data },
+        error => { }
+      );
   }
 
 }
 
-export class Product{
+export class Product {
   constructor(
     public id: number,
-    public name: string,
-    public price: number
-  ){}
+    public productName: string,
+    public price: number,
+    public info: string,
+    public available: number,
+    public imageUrl: string,
+    public category: string,
+    public type: string
+  ) { }
 }

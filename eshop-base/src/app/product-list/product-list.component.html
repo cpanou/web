@@ -6,6 +6,10 @@
                 <th>id</th>
                 <th>Name</th>
                 <th>Price</th>
+                <th>Info</th>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Available</th>
             </tr>
         </thead>
         <tbody>
@@ -13,8 +17,12 @@
             <tr *ngFor="let product of productList; let i = index">
                 <td>{{ i + 1 }}</td>
                 <td>{{ product.id }}</td>
-                <td>{{ product.name }}</td>
+                <td>{{ product.productName }}</td>
                 <td>{{ product.price }}</td>
+                <td>{{ product.info }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.type }}</td>
+                <td>{{ product.available }}</td>
             </tr>
         </tbody>
     </table>
