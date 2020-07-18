@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { pipe, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Credentials } from '../model/credentials';
 
@@ -50,6 +50,7 @@ export class BasicAuthService {
     console.log(response.headers);
     let authToken = response.headers.get("Authorization").split(' ')[1];
     sessionStorage.setItem(AUTH_TOKEN, authToken);
+    //Parse jwt and store attributes from he jwt
     sessionStorage.setItem(USER_ID, username);
     return response;
   }
@@ -61,6 +62,23 @@ export class BasicAuthService {
       console.log(`Error Status: ${error.status}, Error Message: ${error.message} `);
     }
     return throwError(" Something Went wrong ");
+  }
+
+
+  refreshToken(){
+    let token = sessionStorage.getItem(AUTH_TOKEN);
+    this.logout();
+    return this.http.post(`${environment.baseUrl}/eshop/users/token`, { token : token }, { observe : "response", responseType: 'json'  })
+      .pipe(
+        tap( response => {
+          console.log(response.body);
+          if( response.status == 201){
+            sessionStorage.setItem(AUTH_TOKEN, response.body['token']);
+            sessionStorage.setItem(USER_ID, response.body['token']);
+            //store user-Id
+          }
+        })
+      )
   }
 
   logout() {
