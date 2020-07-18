@@ -7,12 +7,12 @@ What we'll learn:
  - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
  - [TypeScript](https://www.typescriptlang.org/)
 
-#### **Environment**
+## **Environment**
    1. Download and install [Node js](https://nodejs.org/en/download/)
    2. Install [Angular CLI](https://angular.io/cli) 
    3. Download and install[Visual Studio Code](https://code.visualstudio.com/download)
 
-#### **Node.js**
+## **Node.js**
 
 Node js is an asynchronous event-driven JavaScript runtime, used as a server environment. Node.js comes with the **npm** package manager for Javascript libraries, npm (Node package manager) has packages you canuse in your apps to make your development faster and efficient. A package in Node.js contains all the files you need for a module. Modules are JavaScript libraries you can include in your project. 
 
@@ -28,7 +28,7 @@ for example:
    ```
 This command downloads and includes the jquery library in our package. Other external libraries can be included in a similar fasion. The downloaded packages can be found in the node_modules directory in our rootfolder. [npmjs](https://www.npmjs.com/) hosts many free libraries to use.
 
-#### **Angular CLI**
+## **Angular CLI**
     
 Angular, the Angular CLI, and Angular apps depend on features and functionality provided by libraries that are available as npm packages. To download and install npm packages, you must have an npm package manager. We use the Angular CLI to create projects, generate application and library code, and perform a variety of ongoing development tasks such as testing, bundling, and deployment.
     To install the angular cli run the following command in a terminal:
@@ -47,11 +47,11 @@ The ng serve command launches the server, watches your files, and rebuilds the a
 ![Sample Screen](https://github.com/cpanou/web/blob/master/AngularStarter/sources/Sample.JPG)
 
 
-#### **Visual Studio Code**
+## **Visual Studio Code**
 
 VScode is the IDE we are going to use to develop the application. Open Visual Studio code, select ```explorer``` (or File from the top meny) and then ```open Folder```. Choose the root folder created with Angular CLI.
 
-### **Resources** 
+## **Resources** 
 
 1. [Angular docs](https://angular.io/docs)
 2. [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
