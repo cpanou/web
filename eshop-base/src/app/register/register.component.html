@@ -2,7 +2,7 @@
     <div class="centered-content">
         <img class="centered-logo" src="assets/logo.png" alt="">
         <div class="centered-container">
-            
+
             <div class="card">
                 <div class="centered-container-header">
                     <h5 class="card-title">Sign Up</h5>
@@ -13,26 +13,26 @@
                         <div class="form-group">
                             <label for="username">username</label>
                             <input name="username" type="text" class="form-control" id="username"
-                                [(ngModel)]="username">
+                                [(ngModel)]="user.username">
                         </div>
                         <div class="form-group">
                             <label for="email">email</label>
-                            <input name="email" type="email" class="form-control" id="email" [(ngModel)]="email">
+                            <input name="email" type="email" class="form-control" id="email" [(ngModel)]="user.email">
                         </div>
                         <div class="form-group">
                             <label for="password">password </label>
                             <input name="password" type="password" class="form-control" id="password"
-                                [(ngModel)]="password">
+                                [(ngModel)]="user.password">
                         </div>
                         <div class="form-group">
                             <label for="firstname">first name</label>
                             <input name="firstname" type="text" class="form-control" id="firstname"
-                                [(ngModel)]="firstname">
+                                [(ngModel)]="user.firstname">
                         </div>
                         <div class="form-group">
                             <label for="lastname">last name</label>
                             <input name="lastname" type="text" class="form-control" id="lastname"
-                                [(ngModel)]="lastname">
+                                [(ngModel)]="user.lastname">
                         </div>
                         <p class="error-msg" *ngIf="registerError">{{ errorMessage }}</p>
                     </form>

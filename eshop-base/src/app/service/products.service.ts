@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { BasicAuthService } from './basic-auth.service';
+import { BasicAuthService } from './auth/basic-auth.service';
 import { tap } from 'rxjs/operators';
 import { Product } from '../product-list/product-list.component';
 
@@ -22,6 +22,5 @@ export class ProductsService {
         tap(body => console.log(body))
       );
   }
-
 
 }

@@ -11,7 +11,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { RegisterComponent } from './register/register.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { HomeComponent } from './home/home.component';
-import { AuthenticationInterceptorService } from './service/authentication-interceptor.service';
+import { AuthenticationInterceptorService } from './service/auth/authentication-interceptor.service';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AuthenticationInterceptorService } from './service/authentication-inter
     NotfoundComponent,
     RegisterComponent,
     ProductListComponent,
-    HomeComponent
+    HomeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

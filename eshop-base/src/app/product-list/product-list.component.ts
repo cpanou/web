@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { ProductsService } from '../service/products.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { ProductsService } from '../service/products.service';
 })
 export class ProductListComponent implements OnInit {
 
+  @Input() inputAttribute;
+  @Output() outputAttribute;
 
   productList = [];
 
@@ -30,7 +32,6 @@ export class Product {
     public price: number,
     public info: string,
     public available: number,
-    public imageUrl: string,
     public category: string,
     public type: string
   ) { }

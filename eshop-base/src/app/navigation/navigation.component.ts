@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BasicAuthService } from '../service/basic-auth.service';
+import { BasicAuthService } from '../service/auth/basic-auth.service';
 
 @Component({
   selector: 'app-navigation',
