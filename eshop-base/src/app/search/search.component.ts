@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { SearchService } from '../service/search.service';
 
 @Component({
   selector: 'app-search',
@@ -7,19 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+
+  //(1) - Output decorator to declare the field as an output to the parent component
+  @Output()
+  searched = new EventEmitter<string>();
+
   searchTerm: string;
 
-  constructor() { }
+  constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
   }
 
+  //(2) - 
   search() {
-    alert(`User Searched: ${this.searchTerm}`);
-    //searchForProducts();
-    //ProductsList[];
+    //Emit new event with the searchTerm as value
+    // this.searched.emit(this.searchTerm);
+    this.searchService.searchProducts(this.searchTerm);
   }
-  
+
 
 
 }

@@ -4,7 +4,7 @@
         E-Shop
     </a>
 
-    <app-search></app-search>
+    <app-search (searched)="userSearched($event)"></app-search>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { BasicAuthService } from '../service/auth/basic-auth.service';
 
@@ -9,6 +9,9 @@ import { BasicAuthService } from '../service/auth/basic-auth.service';
 })
 export class NavigationComponent implements OnInit {
 
+  @Output()
+  searched = new EventEmitter<string>();
+
   constructor(private router: Router,
               private auth: BasicAuthService) { }
 
@@ -18,6 +21,11 @@ export class NavigationComponent implements OnInit {
   logout(): void {
     this.auth.logout();
     this.router.navigate(['login']);
+  }
+
+  userSearched(event){
+    // console.log(event);
+    this.searched.emit(event);
   }
 
 }

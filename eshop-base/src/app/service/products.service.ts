@@ -23,4 +23,13 @@ export class ProductsService {
       );
   }
 
+  searchProduts(searchTerm: string) {
+    return this.http.get<Product[]>(`${environment.baseUrl}/eshop/products?search=${searchTerm}`, { observe: "body", headers: { 'Content-Type': 'application/json' } })
+      .pipe(
+        tap(body => console.log(body))
+      );
+  }
+
+  
+
 }

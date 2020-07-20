@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  searchTerm;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+  //catch child event and save the value in a
+  //local variable
+  onSearch(event) {
+    this.searchTerm = event;
   }
 
 }

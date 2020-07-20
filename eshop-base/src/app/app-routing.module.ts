@@ -4,8 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
-import { RouteGuardProtectedService } from './service/auth/route-guard-protected.service';
-import { RouteGuardPublicService } from './service/auth/route-guard-public.service';
+import { RouteGuardProtectedService } from './service/guards/route-guard-protected.service';
+import { RouteGuardPublicService } from './service/guards/route-guard-public.service';
 
 
 const routes: Routes = [

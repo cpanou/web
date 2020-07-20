@@ -38,7 +38,7 @@ Now we can use css classes from bootstrap in our html.
 * [bs - icons](https://icons.getbootstrap.com/)
 
 
-#### Assigneent 18 - 07 - 2020
+#### Assignment 18 - 07 - 2020
 
 1. Register a User from the register page.
 
