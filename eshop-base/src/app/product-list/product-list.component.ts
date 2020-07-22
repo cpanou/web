@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductsService } from '../service/products.service';
 import { SearchService } from '../service/search.service';
 
@@ -15,7 +15,7 @@ export class ProductListComponent implements OnInit {
   productList = [];
 
   constructor(private productService: ProductsService,
-              private searchSubject: SearchService) { }
+    private searchSubject: SearchService) { }
 
   ngOnInit(): void {
     //subscribe to the search sub. 
@@ -34,23 +34,24 @@ export class ProductListComponent implements OnInit {
   }
 
   searchProducts(searchTerm: string) {
-    this.productService.searchProduts(searchTerm)
-      .subscribe(
-        data => {
-          if (data.length <= 0) {
+    if (searchTerm != null)
+      this.productService.searchProduts(searchTerm)
+        .subscribe(
+          data => {
+            if (data.length <= 0) {
+              this.serverError = true;
+              this.errorMessage = "Something went wrong!"
+            }
+            else {
+              this.serverError = false;
+            }
+            this.productList = data
+          },
+          error => {
             this.serverError = true;
             this.errorMessage = "Something went wrong!"
           }
-          else {
-            this.serverError = false;
-          }
-          this.productList = data
-        },
-        error => {
-          this.serverError = true;
-          this.errorMessage = "Something went wrong!"
-        }
-      );
+        );
   }
 
 

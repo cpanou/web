@@ -56,6 +56,7 @@ export class AuthenticationInterceptorService implements HttpInterceptor {
         );
     }
     //throwError
+    console.log("Fired!")
     this.auth.logout();
     return throwError(error);
   }

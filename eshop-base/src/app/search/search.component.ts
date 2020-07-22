@@ -27,6 +27,4 @@ export class SearchComponent implements OnInit {
     this.searchService.searchProducts(this.searchTerm);
   }
 
-
-
 }
