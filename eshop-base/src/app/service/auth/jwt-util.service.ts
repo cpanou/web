@@ -59,7 +59,7 @@ export class JwtUtilService {
   
   getLastName() {
     let decoded = this.getDecodedAuthToken();
-    return decoded['last'];
+    return decoded['lst'];
   }
   
   getEmail() {
@@ -72,5 +72,17 @@ export class JwtUtilService {
     return decoded['sub'];
   }
 
+  getAuthenticatedUser(): User {
+    let token = this.getDecodedAuthToken();
+    let user = {
+      id : token['sub'],
+      username : token['unm'],
+      firstname : token['fst'],
+      lastname : token['lst'],
+      email : token['eml'],
+      password : ""
+    }
+    return user;
+  }
 
 }

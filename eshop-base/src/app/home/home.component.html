@@ -1,17 +1,7 @@
-
-
-
 <app-navigation (searched)="onSearch($event)"></app-navigation>
 
-<!-- Bind Parent attribute to child attribute -->
-<app-product-list [searchTerm]="searchTerm"></app-product-list>
 
-<!--
-
-<HOME>
-    |--<NAVIGATION>
-    |           |--<SEARCH>
-    |
-    |--<PRODUCTS>
-
--->
+<div class="container" style="display: flex;flex-direction: row;justify-content: center;">
+    <app-product-list [searchTerm]="searchTerm" style="flex: auto;"></app-product-list>
+    <app-cart></app-cart>
+</div>

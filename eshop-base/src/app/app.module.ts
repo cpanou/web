@@ -13,6 +13,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { HomeComponent } from './home/home.component';
 import { AuthenticationInterceptorService } from './service/auth/authentication-interceptor.service';
 import { SearchComponent } from './search/search.component';
+import { CartComponent } from './cart/cart.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { SearchComponent } from './search/search.component';
     RegisterComponent,
     ProductListComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { SearchComponent } from './search/search.component';
     FormsModule
   ],
   providers: [
+    CookieService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptorService, multi: true }
   ],
   bootstrap: [AppComponent]

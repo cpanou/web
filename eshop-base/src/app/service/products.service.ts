@@ -17,10 +17,7 @@ export class ProductsService {
 
 
   getAllProducts() {
-    return this.http.get<Product[]>(`${environment.baseUrl}/eshop/products`, { observe: "body", headers: { 'Content-Type': 'application/json' } })
-      .pipe(
-        tap(body => console.log(body))
-      );
+    return this.http.get<Product[]>(`${environment.baseUrl}/eshop/products`, { observe: "body", headers: { 'Content-Type': 'application/json' } });
   }
 
   searchProduts(searchTerm: string) {

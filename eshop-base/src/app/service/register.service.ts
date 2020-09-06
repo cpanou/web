@@ -17,9 +17,6 @@ export class RegisterService {
 
   //(HINT) -  basic-auth.service.ts for reference
   registerUser(user: User) {
-    //(1) HTTP CALL TO CREATE A USER: HttpClient injection
-    //(2) make a POST request ( see the basic auth service for reference ) and return the observable.
-    //(3) - Optional: Use a .pipe() to manipulate the response object before emiting the result to the component.
     return this.http.post(`${environment.baseUrl}/eshop/users`, user, { observe: 'response', responseType: 'json' })
       .pipe(
         switchMap(response => this.handleSuccess(response, user)),

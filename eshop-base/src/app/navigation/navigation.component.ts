@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { BasicAuthService } from '../service/auth/basic-auth.service';
+import { JwtUtilService } from '../service/auth/jwt-util.service';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-navigation',
@@ -9,13 +11,16 @@ import { BasicAuthService } from '../service/auth/basic-auth.service';
 })
 export class NavigationComponent implements OnInit {
 
+  user: User;
   @Output()
   searched = new EventEmitter<string>();
 
   constructor(private router: Router,
-              private auth: BasicAuthService) { }
+              private auth: BasicAuthService,
+              private jwt: JwtUtilService) { }
 
   ngOnInit(): void {
+    this.user = this.jwt.getAuthenticatedUser();
   }
 
   logout(): void {

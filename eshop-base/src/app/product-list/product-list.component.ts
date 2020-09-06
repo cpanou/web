@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductsService } from '../service/products.service';
 import { SearchService } from '../service/search.service';
+import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -12,10 +13,11 @@ export class ProductListComponent implements OnInit {
   errorMessage: string;
   serverError: boolean = false;
 
-  productList = [];
+  productList: Product[] = [];
 
   constructor(private productService: ProductsService,
-    private searchSubject: SearchService) { }
+    private searchSubject: SearchService,
+    private cart: CartService) { }
 
   ngOnInit(): void {
     //subscribe to the search sub. 
@@ -59,36 +61,25 @@ export class ProductListComponent implements OnInit {
   @Input('searchTerm')
   set searchTerm(searchAttr: string) {
     console.log(searchAttr);
-    // this.productService.searchProduts(searchAttr)
-    //   .subscribe(
-    //     data => {
-    //       if (data.length <= 0) {
-    //         this.serverError = true;
-    //         this.errorMessage = "Something went wrong!"
-    //       }
-    //       else {
-    //         this.serverError = false;
-    //       }
-    //       this.productList = data
-    //     },
-    //     error => {
-    //       this.serverError = true;
-    //       this.errorMessage = "Something went wrong!"
-    //     }
-    //   );
   }
+
+  addToCart(product: Product) {
+    this.cart.addToCart(product);
+  }
+
+  // removeFromCart(productId: string){
+  //   this.cart.removeFromCart(productId);
+  // }
 
 
 }
 
-export class Product {
-  constructor(
-    public id: number,
-    public productName: string,
-    public price: number,
-    public info: string,
-    public available: number,
-    public category: string,
-    public type: string
-  ) { }
+export interface Product {
+  id: number,
+  productName: string,
+  price?: number,
+  info?: string,
+  available?: number,
+  category?: string,
+  type?: string
 }

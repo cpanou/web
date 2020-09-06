@@ -1,0 +1,57 @@
+.container {
+    margin-top: 40px;
+}
+.card-title {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.flexbox-column {
+    display: flex;
+    flex-direction: column;
+}
+.flexbox-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.card {
+    box-shadow: 2px 2px 10px #ccc;
+    width: 296px;
+}
+.card-body{
+    padding: 0.4rem 1.25rem;
+}
+.entry {
+    margin: 8px 0px;
+}
+.entry.empty{
+    justify-content: center;
+}
+.name {
+    padding: 0px 8px;
+    color: gray;
+}
+.count{
+    justify-content: space-around;
+    line-height: initial;
+    border: 1px solid rgba(81, 83, 83, 0.2);
+}
+.count div {    
+    color: gray;
+    text-align: center;
+    min-width: 24px;
+    height: fit-content;
+    width: fit-content;
+}
+.count div:first-child,
+.count div:last-child {
+    cursor: pointer;    
+}
+.count div:first-child{
+    border-right: 1px solid rgba(81, 83, 83, 0.2);
+}
+.count div:last-child {
+    border-left: 1px solid rgba(81, 83, 83, 0.2);
+}

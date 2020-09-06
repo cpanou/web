@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
           this.errorMessage = error;
           console.log(error);
         }
-      );;
+      );
   }
 
   //redirect to user login

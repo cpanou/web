@@ -26,10 +26,10 @@
             </a>
 
             <a class="nav-item nav-link" routerLink="/profile">
-                Username
+                {{ user.username }}
             </a>
 
-            <a (click)="logout()" class="nav-item nav-link ">
+            <a (click)="logout()" class="nav-item nav-link " href>
                 Sign Out
             </a>
 
