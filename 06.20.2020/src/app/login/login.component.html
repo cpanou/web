@@ -1,0 +1,27 @@
+<div class="login-page">
+
+    <div class="login-content">
+
+        <img class="logo" src="assets/logo.png" alt="">
+        <div class="login-container card">
+            <div class="card-body">
+                <h5 class="card-title">Welcome</h5>
+                <span class="card-text">Sign In:</span>
+                <form class="form-group login-form">
+                    <div class="form-group">
+                        <label for="username">username</label>
+                        <input type="email" class="form-control" id="username" [(ngModel)]="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">password </label>
+                        <input type="password" class="form-control" id="password" [(ngModel)]="password">
+                    </div>
+                    <p class="error-msg" *ngIf="loginError">{{ errorMessage }}</p>
+                    <button (click)="login()" class="btn btn-dark">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>

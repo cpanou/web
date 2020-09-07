@@ -1,0 +1,30 @@
+<div class="container">           
+    <p *ngIf="serverError" class="alert-danger alert">{{ errorMessage }} </p>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Info</th>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Available</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- for(Product product: productList)-->
+            <tr *ngFor="let product of productList; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ product.id }}</td>
+                <td>{{ product.productName }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.info }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.type }}</td>
+                <td>{{ product.available }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
