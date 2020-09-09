@@ -1,0 +1,14 @@
+<div class="product-item" *ngFor="let product of productList; let i = index">
+    <!-- <div class="product-info-left flexbox-column">
+          <div class="">{{ product.id }}</div>
+        </div> -->
+    <div class="product-info-middle">
+        <h6 class="">{{ product.productName }}</h6>
+        <div class="">{{ product.info }}</div>
+        <div class="">{{ product.category }}</div>
+        <div class="">{{ product.type }}</div>
+    </div>
+    <div class="product-info-right flexbox-column">
+        <span class="">{{ product.price | currency:'EUR' }}</span>
+    </div>
+</div>

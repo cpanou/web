@@ -1,31 +1,49 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, Navigation, UrlTree } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
+  // (3) - Third Call
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
   searchTerm;
+
   isProfile: Boolean = false;
-  isCart: Boolean = false;
+  isCheckout: Boolean = false;
   isOrders: Boolean = false;
-  path: UrlTree;
+  isHome: Boolean = false;
 
+  // (1) - First Call
   constructor(private router: Router) {
-    this.path = this.router.getCurrentNavigation().extractedUrl;
-    console.log(this.path);
-   }
+    this.router.events.subscribe(
+      event => {
+        if (event instanceof NavigationEnd){
+          this.activatePath(event.url);
+        }
+      }
+    );
+  }
 
-  ngOnInit(): void {
-    this.isProfile = this.path.toString().indexOf("profile") >= 0;
+  activatePath(path: string){
+    this.isProfile = path.indexOf("profile") >= 0;
     console.log("isProfile: "+ this.isProfile);
-    this.isCart = this.path.toString().indexOf("Cart") >= 0;
-    console.log("isCart: "+ this.isCart);
-    this.isOrders = this.path.toString().indexOf("orders") >=0;
+
+    this.isCheckout = path.indexOf("checkout") >= 0;
+    console.log("isCheckout: "+ this.isCheckout);
+
+    this.isOrders = path.indexOf("orders") >=0;
     console.log("isOrders: "+ this.isOrders);
+
+    this.isHome = !(this.isProfile || this.isCheckout || this.isOrders) || path.indexOf("home") >=0;
+    console.log("isHome: "+this.isHome);
+  }
+
+
+  // (2) - Second Call
+  ngOnInit(): void {
   }
 
   //catch child event and save the value in a

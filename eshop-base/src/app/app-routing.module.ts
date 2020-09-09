@@ -12,9 +12,9 @@ const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [RouteGuardPublicService] },
   { path: 'login', component: LoginComponent, canActivate: [RouteGuardPublicService] },
   { path: 'home', component: HomeComponent, canActivate: [RouteGuardProtectedService] },
-  { path: 'profile', component: HomeComponent, canActivate: [RouteGuardPublicService] },
-  { path: 'orders', component: HomeComponent, canActivate: [RouteGuardPublicService] },
-  { path: 'cart', component: HomeComponent, canActivate: [RouteGuardPublicService] },
+  { path: 'profile', component: HomeComponent, canActivate: [RouteGuardProtectedService] },
+  { path: 'orders', component: HomeComponent, canActivate: [RouteGuardProtectedService] },
+  { path: 'checkout', component: HomeComponent, canActivate: [RouteGuardProtectedService] },
   { path: 'sign-up', component: RegisterComponent, canActivate: [RouteGuardPublicService] },
   
   { path: '**', component: NotfoundComponent }

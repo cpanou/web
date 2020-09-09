@@ -1,9 +1,8 @@
+import { HttpErrorResponse, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpErrorResponse } from '@angular/common/http';
+import { throwError } from 'rxjs';
+import { catchError, switchMap } from 'rxjs/operators';
 import { BasicAuthService } from './basic-auth.service';
-import { catchError, retryWhen, mergeMap, delay, switchMap } from 'rxjs/operators';
-import { error } from 'protractor';
-import { throwError, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

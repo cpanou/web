@@ -15,6 +15,10 @@ import { AuthenticationInterceptorService } from './service/auth/authentication-
 import { SearchComponent } from './search/search.component';
 import { CartComponent } from './cart/cart.component';
 import { CookieService } from 'ngx-cookie-service';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { ProfileComponent } from './profile/profile.component';
+import { OrdersComponent } from './orders/orders.component';
+import { ActualListComponent } from './actual-list/actual-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { CookieService } from 'ngx-cookie-service';
     ProductListComponent,
     HomeComponent,
     SearchComponent,
-    CartComponent
+    CartComponent,
+    CheckoutComponent,
+    ProfileComponent,
+    OrdersComponent,
+    ActualListComponent
   ],
   imports: [
     BrowserModule,
