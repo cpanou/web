@@ -5,3 +5,7 @@
     <app-product-list [searchTerm]="searchTerm" style="flex: auto;"></app-product-list>
     <app-cart></app-cart>
 </div>
+
+<div *ngIf="isCart">
+    <app-cart></app-cart>
+</div>

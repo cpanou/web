@@ -34,6 +34,7 @@ export class CartService {
     productList.splice(index, 1);
     this.cookies.set('eshopCart', JSON.stringify(productList));
   }
+  
   public getProductListFromCookie() {
     let value = this.cookies.get('eshopCart');
     let productList: Product[] = [];
