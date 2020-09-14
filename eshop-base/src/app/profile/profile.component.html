@@ -1,6 +1,42 @@
 <div class="container" style="display: flex;">
-    <div class="profile-container">
-      <app-profile> 
-      </app-profile>
+  <div class="centered-container padding: 20px">
+    <div class="profile-container ">
+      <p> Profile Works!</p>
     </div>
-</div>
+    <hr>
+    <table>
+      <tr>
+        <td>
+          <p>FULLNAME:</p>
+        </td>
+        <td>
+          <p>{{ user.fullName}}</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>USERNAME:</p>
+        </td>
+        <td>
+          <p>{{ user.username}}</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>EMAIL:</p>
+        </td>
+        <td>
+          <p>{{ user.email}}</p><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>ID:</p>
+        </td>
+        <td>
+          <p>{{ user.id}}</p><br>
+        </td>
+      </tr>
+    </table>
+
+  </div>

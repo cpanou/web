@@ -11,14 +11,17 @@ export class ProfileComponent implements OnInit {
 
   errorMessage: string;
   serverError: boolean = false;
-  userList: User[] = [];
+  user: User = new User();
 
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
     this.profileService.getUser()
       .subscribe(
-        data => { this.userList = data },
+        data => {
+          console.log(data);
+          this.user = data;
+        },
         error => { console.log(error) }
       );
   }

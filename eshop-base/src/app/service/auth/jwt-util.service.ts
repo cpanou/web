@@ -80,6 +80,7 @@ export class JwtUtilService {
       firstname : token['fst'],
       lastname : token['lst'],
       email : token['eml'],
+      fullName :  token['fst'] + ' ' + token['lst'],
       password : ""
     }
     return user;
