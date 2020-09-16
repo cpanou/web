@@ -1,0 +1,23 @@
+<app-navigation (searched)="onSearch($event)"></app-navigation>
+
+
+<div class="container" style="display: flex;flex-direction: row;justify-content: center;">
+
+    <div *ngIf="isHome" style="display: contents">
+        <app-product-list [searchTerm]="searchTerm" style="flex: auto;"></app-product-list>
+        <app-cart></app-cart>
+    </div>
+
+    <div *ngIf="isCheckout">
+        <app-checkout></app-checkout>
+    </div>
+
+    <div *ngIf="isOrders">
+        <app-orders></app-orders>
+    </div>
+
+    <div *ngIf="isProfile">
+        <app-profile></app-profile>
+    </div>
+
+</div>

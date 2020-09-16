@@ -1,0 +1,11 @@
+<div class="flexbox-row entry empty" *ngIf="cartEmpty">
+    <strong class="name">Your Cart is Empty :(</strong>
+</div>
+<div class="flexbox-row entry" *ngFor="let product of getCartListEntries(); let i = index">
+    <strong class="name">{{ product[0] }}</strong>
+    <div class="flexbox-row count">
+        <div (click)="removeFromCart(product[0])"><i class="fa fa-minus"></i></div>
+        <div><strong> {{ product[1].length }} </strong></div>
+        <div (click)="addToCart(product[0])"><i class="fa fa-plus"></i></div>
+    </div>
+</div>

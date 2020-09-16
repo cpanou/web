@@ -1,0 +1,12 @@
+<div>
+    <form>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="searchTerm" [(ngModel)]="searchTerm" (input)="search()">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-light" (click)="search()">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<div class="container" style="display: flex;">
+  <div class="list-container">
+    <app-actual-list [productList]="productList">
+    </app-actual-list>
+
+  </div>
+  <ul >
+    <div class="addBtn" *ngFor="let product of productList; let i = index">
+      <button class="btn btn-outline-primary" (click)='addToCart(product)'>
+        <i class="fa fa-shopping-cart fa-2x"></i>
+        <div>Add to Cart</div>
+      </button>
+    </div>
+  </ul>
+</div>
