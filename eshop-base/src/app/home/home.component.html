@@ -8,16 +8,10 @@
         <app-cart></app-cart>
     </div>
 
-    <div *ngIf="isCheckout">
-        <app-checkout></app-checkout>
-    </div>
+    <app-checkout *ngIf="isCheckout"></app-checkout>
 
-    <div *ngIf="isOrders">
-        <app-orders></app-orders>
-    </div>
+    <app-orders *ngIf="isOrders" style="flex: auto;"></app-orders>
 
-    <div *ngIf="isProfile">
-        <app-profile></app-profile>
-    </div>
+    <app-profile *ngIf="isProfile"></app-profile>
 
 </div>

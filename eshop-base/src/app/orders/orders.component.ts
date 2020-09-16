@@ -64,6 +64,5 @@ export class OrdersComponent implements OnInit {
     }
     return productList;
   }
-
-
+  
 }
