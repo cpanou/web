@@ -20,6 +20,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ActualListComponent } from './actual-list/actual-list.component';
 import { CartListComponent } from './cart-list/cart-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MyModalComponent } from './my-modal/my-modal.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +38,15 @@ import { CartListComponent } from './cart-list/cart-list.component';
     ProfileComponent,
     OrdersComponent,
     ActualListComponent,
-    CartListComponent
+    CartListComponent,
+    MyModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [
     CookieService,

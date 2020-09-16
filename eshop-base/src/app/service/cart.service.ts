@@ -1,7 +1,6 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { Product } from '../product-list/product-list.component';
+import { EventEmitter, Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { Product } from '../model/Product';
 
 @Injectable({
   providedIn: 'root'

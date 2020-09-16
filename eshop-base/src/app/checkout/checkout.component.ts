@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product-list/product-list.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Order } from '../model/order';
 import { CartService } from '../service/cart.service';
 import { CheckoutService } from '../service/checkout.service';
 
@@ -12,6 +13,7 @@ import { CheckoutService } from '../service/checkout.service';
 export class CheckoutComponent implements OnInit {
 
   success: boolean = false;
+  order: Order;
   successMessage: string = 'Order Placed!! order id:';
 
   error: boolean = false;
@@ -22,6 +24,7 @@ export class CheckoutComponent implements OnInit {
     private checkoutService: CheckoutService) { }
 
   ngOnInit(): void {
+
   }
 
   submitOrder(): void {
@@ -38,13 +41,22 @@ export class CheckoutComponent implements OnInit {
   handleNewOrder(order: any) {
     this.success = true;
     this.error = false;
-    this.successMessage += order.id;
+    
+    this.order = {
+      id: order['id'],
+      status: order['status'],
+      submittedDate: order['submittedDate'],
+      processedDate: order['processedDate'],
+      user: order['user'],
+      productList: order['productList']
+    }
+
   }
 
   handleError(error: HttpErrorResponse) {
     this.error = true;
     this.success = false;
-    this.errorMessage += error.status + ' Message:' + error.message;
+    this.errorMessage = 'Status: ' + error.status + ' Message:' + error.message;
   }
 
 }

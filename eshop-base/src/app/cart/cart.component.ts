@@ -1,9 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CartService, CartEvent, CartAction } from '../service/cart.service';
-import { CookieService } from 'ngx-cookie-service';
-import { filter } from 'rxjs/operators';
-import { Product } from '../product-list/product-list.component';
-import { element } from 'protractor';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cart',

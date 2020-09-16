@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { filter } from 'rxjs/operators';
-import { Product } from '../product-list/product-list.component';
+import { Product } from '../model/Product';
 import { CartAction, CartEvent, CartService } from '../service/cart.service';
 
 @Component({

@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Product } from '../model/Product';
+import { CartService } from '../service/cart.service';
 import { ProductsService } from '../service/products.service';
 import { SearchService } from '../service/search.service';
-import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -48,7 +49,7 @@ export class ProductListComponent implements OnInit {
             else {
               this.serverError = false;
             }
-            this.productList = data
+            this.productList = this.parseProducts(data);
           },
           error => {
             this.serverError = true;
@@ -57,6 +58,24 @@ export class ProductListComponent implements OnInit {
         );
   }
 
+  parseProducts(dataList: Product[]) : Product[] {
+    let productList : Product[];
+    for(let i =0; dataList.length > i; i++) {
+      let product: Product;
+      let data = dataList[i];
+      product = {
+        id: data['id'],
+        productName: data['productName'],
+        price: data['price'],
+        info: data['info'],
+        available: data['available'],
+        category: data['category'],
+        type: data['type']
+      }
+      productList.push(product);
+    }
+    return productList;
+  }
 
   //Bind the searchTerm alias to a local attribute
   @Input('searchTerm')
@@ -71,16 +90,4 @@ export class ProductListComponent implements OnInit {
   // removeFromCart(productId: string){
   //   this.cart.removeFromCart(productId);
   // }
-
-
-}
-
-export interface Product {
-  id: number,
-  productName: string,
-  price?: number,
-  info?: string,
-  available?: number,
-  category?: string,
-  type?: string
 }

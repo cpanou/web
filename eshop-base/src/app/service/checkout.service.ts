@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Product } from '../product-list/product-list.component';
+import { Order } from '../model/order';
+import { Product } from '../model/Product';
 import { JwtUtilService } from './auth/jwt-util.service';
 
 @Injectable({
@@ -14,7 +15,7 @@ export class CheckoutService {
   constructor(private http: HttpClient, private jwt: JwtUtilService) { }
 
   placeOrder(productList:Product[]) {
-    return this.http.post( `${environment.baseUrl}/eshop/users/${this.jwt.getUserId()}`, 
+    return this.http.post<Order>( `${environment.baseUrl}/eshop/users/${this.jwt.getUserId()}`, 
                           productList,
                           { observe: "response", responseType: 'json' })
                 .pipe(

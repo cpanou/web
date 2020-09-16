@@ -1,6 +1,6 @@
 
 <div *ngIf="success" class="alert alert-success">
-    <strong>Success!</strong> {{ successMessage }}.
+    <strong>Success!</strong> {{ successMessage }} {{ order.id}}.
 </div>
 
 <div *ngIf="error"  class="alert alert-danger">
@@ -9,7 +9,10 @@
 <app-cart-list></app-cart-list>
 
 
-<button class="btn btn-outline-primary" (click)="submitOrder()">
+<button class="btn btn-outline-primary" (click)="submitOrder()" data-toggle="modal" data-target="#exampleModal">
     Submit
     <i class="fa fa-shopping-cart"></i>
 </button>
+
+
+<app-my-modal *ngIf="success"></app-my-modal>
