@@ -8,16 +8,14 @@
         <div class=""><b>SUBMITTED:</b> {{ order.submittedDate | date}}</div>
         <div class=""><b>PROCESSED:</b> {{ order.processedDate | date}}</div>
         <hr>
-        <div class="">PRODUCTS: {{ order.productList.length}}</div>
+        <div class=""><b>PRODUCTS:</b> {{ order.productList.length}}</div>
+        <hr>
         <div *ngFor="let product of order.productList; let j = index">
             <h6 class="">{{ product.productName }}</h6>
             <div class="">{{ product.info }}</div>
             <div class="">{{ product.category }}</div>
             <div class="">{{ product.type }}</div>
+            <hr>
         </div>
-        <div> {{ order.productList[1].id}}  </div>
     </div>
 </div>
-<script>
-    console.log();
-</script>
